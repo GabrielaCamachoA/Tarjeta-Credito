@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div class="card">
+            <div class="front">
+                <img src="./img/card-chip.png" class="chip">
+                <div>
+                    <span class="label">Número de tarjeta</span>
+                    <span id="numTarjeta">#### #### #### ####</span>
+                </div>
+                <div class="row">
+                    <span class="label">Nombre completo</span>
+                    <span id="nombreCompleto"></span>
+                    <div>
+                        <span class="label">EXPIRACIÓN</span>
+                        <span id="numTarjeta"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="band"></div>
+                <div class="firma"></div>
+                <div class="ccv"></div>
+            </div>
+        </div>
+        <form>
+            <div>
+                <label>Nombre completo</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label>Número de tarjeta</label>
+                <input type="text" id="numTarjeta">
+            </div>
+            <div class="back">
+                <label>Expiración</label>
+                <input type="month" id="expiracion">
+            </div>
+            <div class="back">
+                <label>CCV</label>
+                <input type="number" id="ccv">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+<script src="./app.js"></script>
+</html>

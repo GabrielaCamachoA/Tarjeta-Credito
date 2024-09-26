@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta</title>
-    <link rel="stylesheet" href="./style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarjeta</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./app.js" defer></script>
 </head>
 <body>
     <main>
-        <div class="card">
+        <div class="card" onclick="voltearTarjeta()">
             <div class="front">
                 <img src="./img/card-chip.png" class="chip">
                 <div>
@@ -16,40 +17,51 @@
                     <span id="numTarjeta">#### #### #### ####</span>
                 </div>
                 <div class="row">
-                    <span class="label">Nombre completo</span>
-                    <span id="nombreCompleto"></span>
+                    <div>
+                        <span class="label">Nombre completo</span>
+                        <span id="nombreCompleto"></span>
+                    </div>
                     <div>
                         <span class="label">EXPIRACIÓN</span>
-                        <span id="numTarjeta"></span>
+                        <span id="expirar"></span>
                     </div>
                 </div>
             </div>
             <div class="back">
                 <div class="band"></div>
-                <div class="firma"></div>
-                <div class="ccv"></div>
+                <div class="info">
+                    <div class="firma">
+                        <span>Firma</span>
+                        <span id="firma"></span>
+                    </div>
+                    <div class="ccv">
+                        <span>CCV</span>
+                        <span id="CCV"></span>
+                    </div>
+                </div>
+                <div></div>
             </div>
         </div>
-        <form>
+        <button class="modal" onclick="toggleForm()">+</button>
+        <form id="form">
             <div>
                 <label>Nombre completo</label>
                 <input type="text" id="name">
             </div>
             <div>
                 <label>Número de tarjeta</label>
-                <input type="text" id="numTarjeta">
+                <input type="text" id="numInput" maxlength="19">
             </div>
             <div class="back">
                 <label>Expiración</label>
-                <input type="month" id="expiracion">
+                <input type="month" class="inputExp" id="expiracion">
             </div>
             <div class="back">
                 <label>CCV</label>
                 <input type="number" id="ccv">
             </div>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="saveItems()">
         </form>
     </main>
 </body>
-<script src="./app.js"></script>
 </html>
